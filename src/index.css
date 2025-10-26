@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #B88E2F;
+  --color-secondary: #FFF3E3;
+}
+
+.active {
+    color: #B88E2F;
+}
