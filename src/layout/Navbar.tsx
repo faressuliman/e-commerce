@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { UserRound, Heart, ShoppingCart, Search, Menu } from "lucide-react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { openSidebar } from "../app/features/menuDrawerSlice"
+import { openUserDrawer } from "../app/features/userDrawerSlice"
 
 const Navbar = () => {
 
@@ -18,7 +19,7 @@ const Navbar = () => {
                         <button
                             type="button"
                             className="inline-flex items-center justify-center p-2 w-8 h-8 text-gray-700 rounded-lg hover:bg-gray-100 hover:cursor-pointer focus:outline-none"
-                            onClick={() => {dispatch(openSidebar())}}
+                            onClick={() => { dispatch(openSidebar()) }}
                         >
                             <Menu className="w-5 h-5" />
                         </button>
@@ -33,7 +34,8 @@ const Navbar = () => {
                     </NavLink>
 
                     <div className="flex items-center gap-3">
-                        <button className="hover:text-primary hover:cursor-pointer transition-colors text-gray-700">
+                        <button className="hover:text-primary hover:cursor-pointer transition-colors text-gray-700"
+                            onClick={() => { dispatch(openUserDrawer()) }}>
                             <UserRound className="w-5 h-5" />
                         </button>
                         <button className="hover:text-primary hover:cursor-pointer transition-colors relative text-gray-700">
@@ -99,7 +101,8 @@ const Navbar = () => {
                             </div>
                         </div>
 
-                        <button className="hover:text-primary hover:cursor-pointer transition-colors">
+                        <button className="hover:text-primary hover:cursor-pointer transition-colors"
+                            onClick={() => { dispatch(openUserDrawer()) }}>
                             <UserRound className="w-5 h-5" />
                         </button>
                         <button className="hover:text-primary hover:cursor-pointer transition-colors">

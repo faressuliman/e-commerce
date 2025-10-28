@@ -37,7 +37,7 @@ const MenuDrawer = () => {
                 {/* Close button */}
                 <button
                     type="button"
-                    className="absolute top-4.5 right-2.5 text-gray-500 hover:text-primary hover:cursor-pointer"
+                    className="absolute top-4.5 right-2.5 text-gray-500 hover:text-primary hover:cursor-pointer transition duration-300"
                     onClick={() => dispatch(closeSidebar())}
                 >
                     <X className="w-5 h-5" />

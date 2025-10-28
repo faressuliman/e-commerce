@@ -1,4 +1,5 @@
 import hero from "../assets/hero-bg.png"
+import Button from "../components/ui/Button"
 
 const index = () => {
   return (
@@ -26,9 +27,10 @@ const index = () => {
             Elevate your space with our latest curated furniture and decor. Experience the perfect blend of modern design, crafted for comfort and lasting style.
           </p>
 
-          <button className="w-full lg:w-40 py-2 sm:py-4 lg:py-4 bg-primary font-bold text-sm text-white hover:bg-amber-400 hover:cursor-pointer transition-colors duration-300">
+          <Button
+            className="w-full md:w-48 py-4 text-white bg-primary border hover:bg-secondary hover:-translate-y-1 hover:border-primary hover:text-primary mb-4 text-sm">
             SHOP NOW
-          </button>
+          </Button>
         </div>
       </section>
     </section>
