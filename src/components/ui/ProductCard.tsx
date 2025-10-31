@@ -9,7 +9,7 @@ const ProductCard = ({
   thumbnail,
 }: Pick<IProduct, "title" | "subtitle" | "price" | "thumbnail">) => {
   return (
-    <div className="w-[300px] bg-white border border-gray-200 rounded-lg shadow-sm flex flex-col h-[448px]">
+    <div className="w-[300px] bg-white border border-gray-200 shadow-sm flex flex-col h-[448px]">
       {/* Product Image */}
       <img
         className="rounded-t-lg w-full h-64 object-cover"
