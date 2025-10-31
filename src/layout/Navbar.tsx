@@ -10,7 +10,7 @@ const Navbar = () => {
     const dispatch = useDispatch()
 
     return (
-        <nav className="bg-white">
+        <nav className="bg-white shadow-xs">
             <div className="lg:container mx-auto max-w-8xl p-4">
 
                 {/* Mobile + Tablet navbar */}

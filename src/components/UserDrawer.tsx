@@ -55,10 +55,12 @@ const MenuDrawer = () => {
                         <NavLink to="/forgotpassword">
                             <p className="text-gray-600 text-xs underline text-center mb-5">Forgot your password?</p>
                         </NavLink>
-                        <Button
-                            className="w-full rounded-md bg-white border text-primary border-primary hover:bg-primary hover:-translate-y-1 hover:text-white text-sm">
-                            CREATE ACCOUNT
-                        </Button>
+                        <NavLink to="/register">
+                            <Button onClick={() => dispatch(closeUserDrawer())}
+                                className="w-full rounded-md bg-white border text-primary border-primary hover:bg-primary hover:-translate-y-1 hover:text-white text-sm">
+                                CREATE ACCOUNT
+                            </Button>
+                        </NavLink>
                     </div>
                 </div>
             </div>
