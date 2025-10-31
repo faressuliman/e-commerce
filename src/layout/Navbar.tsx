@@ -54,7 +54,7 @@ const Navbar = () => {
                         <span className="text-2xl font-bold text-black">Furniro</span>
                     </NavLink>
 
-                    <ul className="flex items-center space-x-16 font-medium translate-x-20">
+                    <ul className="flex items-center space-x-16 font-medium translate-x-24">
                         <li>
                             <NavLink
                                 to="/"
