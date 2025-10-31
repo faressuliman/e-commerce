@@ -95,7 +95,7 @@ const Index = () => {
       </section>
 
       {/* Featured Products Section */}
-      <section className="mt-16 container mx-auto px-4">
+      <section className="mt-16 max-w-screen-3xl mx-auto p-4 lg:px-12">
         <h2 className="text-grey font-bold md:text-3xl text-2xl text-center mb-7">
           Featured Products
         </h2>
@@ -123,12 +123,12 @@ const Index = () => {
 
       {/* Room Inspiration Section */}
       <section className="mt-20 bg-secondary py-16">
-        <div className="container mx-auto px-6 lg:px-16">
+        <div className="max-w-screen-3xl mx-auto p-4 lg:px-12">
           <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10">
 
-            {/* LEFT: Text */}
+            {/* Text */}
             <div className="lg:w-1/3 w-full space-y-6 text-center lg:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+              <h2 className="md:text-3xl text-2xl font-bold text-gray-800">
                 50+ Beautiful rooms inspiration
               </h2>
               <p className="text-gray-600">
@@ -141,7 +141,7 @@ const Index = () => {
               </div>
             </div>
 
-            {/* RIGHT: Custom Slideshow */}
+            {/* Slideshow */}
             <div className="lg:w-2/3 w-full relative">
               <div className="overflow-hidden rounded-lg shadow-md relative h-[400px]">
                 {slides.map((src, index) => (
@@ -155,7 +155,7 @@ const Index = () => {
                 ))}
               </div>
 
-              {/* Navigation buttons with Lucide icons */}
+              {/* Navigation buttons */}
               <button
                 onClick={() =>
                   setCurrent((prev) => (prev - 1 + slides.length) % slides.length)

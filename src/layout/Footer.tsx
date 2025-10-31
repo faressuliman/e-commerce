@@ -4,8 +4,8 @@ import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-white border-t border-gray-200 mt-auto">
-      <div className="lg:container mx-auto max-w-8xl px-4 py-12">
+    <footer className="bg-[#f9f9f9] border-t border-gray-200 mt-auto">
+      <div className="mx-auto max-w-screen-3xl lg:px-12 px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           
           {/* Logo and Brand */}

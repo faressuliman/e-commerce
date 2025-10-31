@@ -7,7 +7,7 @@ const Register = () => {
     <div>
 
       <PageHeader title="Register"/>
-      <div className="lg:container mx-auto max-w-8xl p-4 pb-32">
+      <div className="max-w-screen-3xl mx-auto lg:px-12 p-4 pb-24">
         <h2 className="py-4 font-semibold">CREATE AN ACCOUNT</h2>
         <h6 className="pb-6 text-xs font-normal tracking-wide">Please register below to create an account</h6>
 

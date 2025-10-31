@@ -11,7 +11,7 @@ const Navbar = () => {
 
     return (
         <nav className="bg-white shadow-xs">
-            <div className="lg:container mx-auto max-w-8xl p-4">
+            <div className="mx-auto max-w-screen-3xl p-4 lg:px-12">
 
                 {/* Mobile + Tablet navbar */}
                 <div className="flex items-center justify-between lg:hidden">
@@ -54,7 +54,7 @@ const Navbar = () => {
                         <span className="text-2xl font-bold text-black">Furniro</span>
                     </NavLink>
 
-                    <ul className="flex items-center space-x-16 font-medium">
+                    <ul className="flex items-center space-x-16 font-medium translate-x-20">
                         <li>
                             <NavLink
                                 to="/"
