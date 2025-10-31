@@ -3,6 +3,7 @@
 @theme {
   --color-primary: #B88E2F;
   --color-secondary: #FFF3E3;
+  --color-grey: #333333;
 }
 
 .active {

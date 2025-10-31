@@ -1,9 +1,10 @@
 const Shop = () => {
+
   return (
     <div>
-      
-    </div>
-  )
-}
 
-export default Shop
+    </div>
+  );
+};
+
+export default Shop;

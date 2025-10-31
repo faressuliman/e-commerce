@@ -1,17 +1,29 @@
 import hero from "../assets/hero-bg.png"
 import Button from "../components/ui/Button"
 import { sectionsData } from "../data"
+import ProductCard from "../components/ui/ProductCard";
+import { IProduct } from "../interfaces";
+import { useQuery } from "@tanstack/react-query";
+import { fetchProducts } from "../lib/api";
 
 const index = () => {
 
   const renderSectionsData = sectionsData.map(({ title, imageURL }) => (
-    <div key={title} className="h-[500px] flex flex-col items-center gap-2 pt-5">
+    <div key={title} className="h-[500px] flex flex-col items-center gap-4 pt-5">
       <div className="w-[380px] h-[480px] rounded-md overflow-hidden shadow-lg hover:opacity-70 transition-opacity duration-300 hover:cursor-pointer">
         <img src={imageURL} alt={title} className="w-full h-full object-cover" />
       </div>
-      <h2 className="text-gray-700 font-bold md:text-xl text-lg">{title}</h2>
+      <h2 className="text-grey font-bold md:text-xl text-lg">{title}</h2>
     </div>
   ))
+
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["products"],
+    queryFn: fetchProducts
+  })
+
+  if (isLoading) return <p>Loading products...</p>;
+  if (isError) return <p>Failed to load products.</p>;
 
   return (
     <>
@@ -48,12 +60,30 @@ const index = () => {
         </section>
       </section>
 
+      {/* Dining/Living/Bedroom Section */}
       <section className="mt-8">
-        <h2 className="text-gray-700 font-bold md:text-2xl text-2xl text-center mb-1">Browse The Range</h2>
-        <p className="md:text-lg text-md text-center mb-3">Intriguing and Concise Explore a world of possibilities with our diverse and ever-growing selection.</p>
+        <h2 className="text-grey font-bold md:text-3xl text-2xl text-center mb-1">Browse The Range</h2>
+        <p className="md:text-lg text-md text-center mb-3 ">Intriguing and Concise Explore a world of possibilities with our diverse and ever-growing selection.</p>
         {/* Dining & Living & Bedroom */}
         <div className="container mx-auto flex flex-col lg:flex-row justify-center items-center lg:space-x-6 space-y-6 lg:space-y-0">
           {renderSectionsData}
+        </div>
+      </section>
+
+      {/* Featured Products Section */}
+      <section className="mt-16">
+        <h2 className="text-grey font-bold md:text-3xl text-2xl text-center mb-7">Featured Products</h2>
+        {/* Dining & Living & Bedroom */}
+        <div className="flex flex-col lg:flex-row justify-center items-center lg:space-x-10 space-y-6 lg:space-y-0">
+          {data?.data?.map((product: IProduct) => (
+            <ProductCard
+              key={product.id}
+              title={product.title}
+              subtitle={product.subtitle}
+              price={product.price}
+              thumbnail={product.thumbnail}
+            />
+          ))}
         </div>
       </section>
     </>
