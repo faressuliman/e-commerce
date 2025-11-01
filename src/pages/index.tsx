@@ -18,7 +18,7 @@ const Index = () => {
 
   const renderSectionsData = sectionsData.map(({ title, imageURL }) => (
     <div key={title} className="h-[500px] flex flex-col items-center gap-4 pt-5">
-      <div className="w-[380px] h-[480px] rounded-md overflow-hidden shadow-lg hover:opacity-70 transition-opacity duration-300 hover:cursor-pointer">
+      <div className="w-[380px] lg:w-[300px] xl:w-[380px] h-[480px] rounded-md overflow-hidden shadow-lg hover:opacity-70 transition-opacity duration-300 hover:cursor-pointer">
         <img src={imageURL} alt={title} className="w-full h-full object-cover" />
       </div>
       <h2 className="text-grey font-bold md:text-xl text-lg">{title}</h2>
@@ -89,10 +89,13 @@ const Index = () => {
           diverse and ever-growing selection.
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-10 lg:px-12">
+        <div className="flex xl:flex xl:flex-row flex-col space-y-8 max-w-screen-3xl justify-center lg:grid lg:grid-cols-3 lg:gap-x-8">
           {renderSectionsData}
         </div>
       </section>
+
+
+
 
       {/* Featured Products Section */}
       <section className="mt-16 max-w-screen-3xl mx-auto p-4 lg:px-12">
@@ -100,10 +103,10 @@ const Index = () => {
           Featured Products
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-8 lg:px-12 justify-items-center">
+        <div className="flex flex-col items-center space-y-8 max-w-screen-3xl justify-center md:grid md:grid-cols-2 md:justify-items-center md:items-start lg:grid lg:grid-cols-4 lg:gap-x-24 xl:gap-x-0 lg:justify-items-center lg:items-start xl:justify-items-center">
           {isLoading
-            ? [...Array(8)].map((_, i) => <ProductCardSkeleton key={i} />)
-            : data?.data?.map((product: IProduct) => (
+            ? [...Array(4)].map((_, i) => <ProductCardSkeleton key={i} />)
+            : data?.data?.slice(0, 4).map((product: IProduct) => (
               <ProductCard
                 key={product.id}
                 title={product.title}
@@ -114,9 +117,10 @@ const Index = () => {
             ))}
         </div>
 
+
         <div className="flex justify-center mt-10">
           <Button className="w-56 text-center bg-white border text-primary border-primary hover:bg-primary hover:-translate-y-1 hover:text-white text-sm">
-            SHOW MORE
+            SHOP ALL
           </Button>
         </div>
       </section>

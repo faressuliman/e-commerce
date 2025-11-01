@@ -9,7 +9,7 @@ const ProductCard = ({
   thumbnail,
 }: Pick<IProduct, "title" | "subtitle" | "price" | "thumbnail">) => {
   return (
-    <div className="w-[300px] bg-white border border-gray-200 shadow-sm flex flex-col h-[448px]">
+    <div className="w-[300px] lg:w-[250px] xl:w-[300px] bg-white border border-gray-200 shadow-sm flex flex-col h-[448px]">
       {/* Product Image */}
       <img
         className="rounded-t-lg w-full h-64 object-cover"
@@ -20,7 +20,7 @@ const ProductCard = ({
       {/* Product Details */}
       <div className="flex flex-col justify-between grow p-5 bg-[#F4F5F7] rounded-b-lg">
         <div>
-          <h5 className="mb-2 text-xl font-semibold tracking-tight text-gray-900">
+          <h5 className="mb-2 text-md lg:text-md xl:text-xl font-semibold tracking-tight text-gray-900">
             {title}
           </h5>
           <p className="mb-4 font-normal text-gray-700 text-sm">
@@ -35,7 +35,7 @@ const ProductCard = ({
           </span>
 
           <div className="flex items-center justify-center gap-3 w-full">
-            <Button className="flex items-center justify-center gap-2 px-4 py-2 text-white bg-primary border hover:bg-white hover:-translate-y-1 hover:border-primary hover:text-primary text-sm font-medium rounded-md transition-all flex-1">
+            <Button className="lg:w-32 xl:w-full flex items-center justify-center gap-2 px-4 py-2 text-white bg-primary border hover:bg-white hover:-translate-y-1 hover:border-primary hover:text-primary text-sm font-medium rounded-md transition-all flex-1">
               <ShoppingCart size={18} />
               Add To Cart
             </Button>
