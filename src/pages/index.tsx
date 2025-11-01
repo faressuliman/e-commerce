@@ -80,27 +80,27 @@ const Index = () => {
       </section>
 
       {/* Dining/Living/Bedroom Section */}
-      <section className="mt-8">
+      <section className="mt-8 max-w-screen-3xl mx-auto p-4 lg:px-12">
         <h2 className="text-grey font-bold md:text-3xl text-2xl text-center mb-1">
           Browse The Range
         </h2>
-        <p className="md:text-lg text-md text-center mb-3">
+        <p className="md:text-lg text-md text-center mb-5">
           Intriguing and concise. Explore a world of possibilities with our
           diverse and ever-growing selection.
         </p>
 
-        <div className="container mx-auto flex flex-col lg:flex-row justify-center items-center lg:space-x-6 space-y-6 lg:space-y-0">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-10 lg:px-12">
           {renderSectionsData}
         </div>
       </section>
 
       {/* Featured Products Section */}
       <section className="mt-16 max-w-screen-3xl mx-auto p-4 lg:px-12">
-        <h2 className="text-grey font-bold md:text-3xl text-2xl text-center mb-7">
+        <h2 className="text-grey font-bold md:text-3xl text-2xl text-center mb-8">
           Featured Products
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-8 lg:px-12 justify-items-center">
           {isLoading
             ? [...Array(8)].map((_, i) => <ProductCardSkeleton key={i} />)
             : data?.data?.map((product: IProduct) => (
